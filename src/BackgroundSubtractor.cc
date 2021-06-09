@@ -80,7 +80,7 @@ NAN_METHOD(BackgroundSubtractorWrap::New) {
 #if CV_MAJOR_VERSION >= 3
 #ifdef HAVE_OPENCV_BGSEGM
   cv::Ptr<cv::BackgroundSubtractor> bg = cv::bgsegm::createBackgroundSubtractorMOG();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from cv::bgsegm::createBackgroundSubtractorMOG()");
   }
   BackgroundSubtractorWrap *pt = new BackgroundSubtractorWrap(bg);
@@ -91,7 +91,7 @@ NAN_METHOD(BackgroundSubtractorWrap::New) {
 #else
   // if no bgsem, then default to MOG2
   cv::Ptr<cv::BackgroundSubtractor> bg = cv::createBackgroundSubtractorMOG2();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from cv::createBackgroundSubtractorMOG2()");
   }
   BackgroundSubtractorWrap *pt = new BackgroundSubtractorWrap(bg);
@@ -103,7 +103,7 @@ NAN_METHOD(BackgroundSubtractorWrap::New) {
   
 #else
   cv::Ptr<cv::BackgroundSubtractor> bg = new cv::BackgroundSubtractorMOG();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from new cv::BackgroundSubtractorMOG()");
   }
   BackgroundSubtractorWrap *pt = new BackgroundSubtractorWrap(bg);
@@ -134,7 +134,7 @@ NAN_METHOD(BackgroundSubtractorWrap::CreateMOG) {
 #if CV_MAJOR_VERSION >= 3
 #ifdef HAVE_OPENCV_BGSEGM
   cv::Ptr<cv::BackgroundSubtractor> bg = cv::bgsegm::createBackgroundSubtractorMOG();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from cv::bgsegm::createBackgroundSubtractorMOG()");
   }
   BackgroundSubtractorWrap *pt = new BackgroundSubtractorWrap(bg);
@@ -146,7 +146,7 @@ NAN_METHOD(BackgroundSubtractorWrap::CreateMOG) {
 #endif
 #else
   cv::Ptr<cv::BackgroundSubtractor> bg = new cv::BackgroundSubtractorMOG();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from new cv::BackgroundSubtractorMOG()");
   }
   BackgroundSubtractorWrap *pt = new BackgroundSubtractorWrap(bg);
