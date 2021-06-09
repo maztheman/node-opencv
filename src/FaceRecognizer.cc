@@ -204,7 +204,7 @@ Local<Value> UnwrapTrainingData(Nan::NAN_METHOD_ARGS_TYPE info,
     }
 
     int label = valarr->Get(Nan::GetCurrentContext(),0)->Uint32Value(Nan::GetCurrentContext()).ToChecked();
-    cv::Mat im = fromMatrixOrFilename(valarr->Get(Nan::GetCurrentContext(),1).ToLocal()); //this is ok because we clone the image
+    cv::Mat im = fromMatrixOrFilename(valarr->Get(Nan::GetCurrentContext(),1).ToLocalChecked()); //this is ok because we clone the image
     im = im.clone();
     if (im.channels() == 3) {
       cv::cvtColor(im, im, CV_RGB2GRAY);
