@@ -246,7 +246,7 @@ NAN_METHOD(BackgroundSubtractorWrap::ApplyMOG) {
     return;
   }
 
-  if (NULL == self->subtractor){
+  if (nullptr == self->subtractor){
     argv[0] = Nan::New("BackgroundSubtractor not created").ToLocalChecked();
     argv[1] = Nan::Null();
     cb->Call( Nan::GetCurrentContext(), Nan::GetCurrentContext()->Global(), 2, argv);
@@ -341,7 +341,7 @@ public:
     Nan::HandleScope scope;
 
     delete matrix;
-    matrix = NULL;
+    matrix = nullptr;
 
     Local<Object> im_to_return = Matrix::CreateWrappedFromMat(_fgMask.clone());
 
