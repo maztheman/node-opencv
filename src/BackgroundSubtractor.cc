@@ -175,7 +175,7 @@ NAN_METHOD(BackgroundSubtractorWrap::CreateMOG2) {
 
 #if CV_MAJOR_VERSION >= 3
   cv::Ptr<cv::BackgroundSubtractor> bg = cv::createBackgroundSubtractorMOG2();
-  if (NULL == bg){
+  if (nullptr == bg){
    JSTHROW_TYPE("OpenCV NULL from cv::createBackgroundSubtractorMOG2()");
   }
 #else
