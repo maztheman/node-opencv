@@ -199,7 +199,7 @@ Local<Value> UnwrapTrainingData(Nan::NAN_METHOD_ARGS_TYPE info,
 
     Local<Array> valarr = Local<Array>::Cast(val);
 
-    if (valarr->Length() != 2 || !valarr->Get(Nan::GetCurrentContext(),0)->IsInt32()) {
+    if (valarr->Length() != 2 || !valarr->Get(Nan::GetCurrentContext(),0).ToLocalChecked()->IsInt32()) {
       JSTHROW("train takes a list of [label, image] tuples")
     }
 
