@@ -389,7 +389,7 @@ NAN_METHOD(BackgroundSubtractorWrap::Apply) {
       cb->Call( Nan::GetCurrentContext(), Nan::GetCurrentContext()->Global(), 2, argv);
       return;
     }
-    if (NULL == self->subtractor){
+    if (nullptr == self->subtractor){
       argv[0] = Nan::New("BackgroundSubtractor not created").ToLocalChecked();
       argv[1] = Nan::Null();
       cb->Call( Nan::GetCurrentContext(), Nan::GetCurrentContext()->Global(), 2, argv);
